@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarly-Style Recruitment Dashboard (Full Width)</title>
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- MAIN AREA (No Sidebar) -->
+        <div class="main-wrapper">
+
+            <!-- Header & Top Stats -->
+            <header class="top-header">
+                <div class="header-titles">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2.5">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                        <h1>PAC Performance Dashboard</h1>
+                    </div>
+                    <p>Dashboard unique identifier - 2026 Overview</p>
+                </div>
+
+                <div class="header-stats">
+                    <div class="stat-pill">
+                        <span class="icon" style="color: #0EA5E9;">📂</span>
+                        <div>
+                            <strong>450+</strong>
+                            <span>Profiles Submitted</span>
+                        </div>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="icon" style="color: #A855F7;">📅</span>
+                        <div>
+                            <strong>50+</strong>
+                            <span>Interviews Scheduled</span>
+                        </div>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="icon" style="color: #10B981;">🤝</span>
+                        <div>
+                            <strong>6</strong>
+                            <span>Total Closures</span>
+                        </div>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="icon" style="color: #F59E0B;">⏱</span>
+                        <div>
+                            <strong>15 Days</strong>
+                            <span>Avg Closure Time</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- PRIORITY 1: Candidate Closures (Full Width) -->
+            <section class="card-box closures-section">
+                <div class="section-header">
+                    <h3>Priority: Candidate Closures</h3>
+                </div>
+                <div class="table-scroll-container limit-height-full">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Candidate Name</th>
+                                <th>Role / Title</th>
+                                <th>Key Skills / Tech</th>
+                                <th>Client</th>
+                                <th>Location</th>
+                                <th>Joining Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="candidate-table">
+                            <!-- Injected via app.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ROW 2: Learning & Development -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+                <div>
+                    <h2 style="font-size: 20px; font-weight: 700; color: #0F172A; margin: 0;">Learning & Development
+                    </h2>
+                </div>
+                <div>
+                    <h2
+                        style="font-size: 16px; font-weight: 700; color: #10B981; margin: 0; background: #ECFDF5; padding: 8px 16px; border-radius: 20px;">
+                        Total Learning: 83.3 Hours</h2>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px;">
+
+                <!-- L&D Trajectory -->
+                <section class="card-box" style="display: flex; flex-direction: column;">
+                    <div class="section-header" style="align-items: center;">
+                        <h3 style="font-size: 16px;">Learning & Development Trajectory</h3>
+                        <div style="display: flex; gap: 8px;">
+                            <div
+                                style="background: white; border: 1px solid #E2E8F0; border-radius: 6px; padding: 6px 12px; font-size: 13px; color: #64748B; display: flex; align-items: center; gap: 8px;">
+                                <span>📅</span> 8 Nov 2025 - 14 Nov 2025
+                            </div>
+                            <select class="dropdown"
+                                style="padding: 6px 12px; border: 1px solid #E2E8F0; border-radius: 6px; font-size: 13px;">
+                                <option>Last 7 days</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="chart-wrapper" style="height: 220px; position:relative; flex-grow:1; margin-top: 24px;">
+                        <canvas id="ld-line-chart"></canvas>
+                    </div>
+                </section>
+
+                <!-- Internal & External L&D Right Side -->
+                <div style="display: flex; flex-direction: column; gap: 32px;">
+                    <!-- Internal L&D -->
+                    <section class="card-box" style="flex: 1; padding: 24px;">
+                        <div
+                            style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
+                            <h3 style="font-size: 16px; font-weight: 600; color: #0F172A; margin: 0;">Internal Required
+                                Courses</h3>
+                            <span
+                                style="font-size: 13px; font-weight: 600; color: #10B981; background: #ECFDF5; padding: 4px 10px; border-radius: 12px;">53.3
+                                Hrs Completed</span>
+                        </div>
+                        <div class="table-scroll-container" style="overflow-y: visible;">
+                            <table class="data-table clean-table">
+                                <thead>
+                                    <tr>
+                                        <th>COURSE NAME</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ld-internal-table">
+                                    <!-- Injected -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- External L&D -->
+                    <section class="card-box" style="flex: 1; padding: 24px;">
+                        <div
+                            style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
+                            <h3 style="font-size: 16px; font-weight: 600; color: #0F172A; margin: 0;">External
+                                Certifications & Self Learning</h3>
+                            <span
+                                style="font-size: 13px; font-weight: 600; color: #10B981; background: #ECFDF5; padding: 4px 10px; border-radius: 12px;">27.0
+                                Hrs Completed</span>
+                        </div>
+                        <div class="table-scroll-container" style="overflow-y: visible;">
+                            <table class="data-table clean-table">
+                                <thead>
+                                    <tr>
+                                        <th>CERTIFICATION / SKILL</th>
+                                        <th>PLATFORM</th>
+                                        <th>STATUS / HRS</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="ld-external-table">
+                                    <!-- Injected -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- ROW 3: Leaves Breakdown (2025 vs 2026) -->
+            <div class="section-title-outer">
+                <h2>Annual Leave Tracking</h2>
+                <p>Comparing quotas, utilization, and exhaustion rates across years.</p>
+            </div>
+
+            <div class="grid-2-col">
+                <!-- 2025 Leaves -->
+                <section class="card-box card-pink">
+                    <div class="section-header">
+                        <h3>2025 Overal Tracking</h3>
+                        <div class="mini-stat"><strong>25</strong> Provided &bull; <strong>18</strong> Taken</div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 32px; align-items: center;">
+                        <div class="chart-wrapper"
+                            style="height: 250px; width: 100%; position:relative; display: flex; justify-content: center;">
+                            <canvas id="leaves-donut-2025"></canvas>
+                        </div>
+                        <div class="table-scroll-container" style="width: 100%;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Leave Type</th>
+                                        <th>Provided</th>
+                                        <th>Taken</th>
+                                        <th>Status (Exhausted)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaves-2025">
+                                    <!-- Injected -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2026 Leaves -->
+                <section class="card-box card-purple">
+                    <div class="section-header">
+                        <h3>2026 Current Tracking</h3>
+                        <div class="mini-stat" style="color:#A855F7;"><strong>35</strong> Provided &bull;
+                            <strong>8</strong> Taken
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 32px; align-items: center;">
+                        <div class="chart-wrapper"
+                            style="height: 250px; width: 100%; position:relative; display: flex; justify-content: center;">
+                            <canvas id="leaves-donut-2026"></canvas>
+                        </div>
+                        <div class="table-scroll-container" style="width: 100%;">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Leave Type</th>
+                                        <th>Provided</th>
+                                        <th>Taken</th>
+                                        <th>Status (Exhausted)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leaves-2026">
+                                    <!-- Injected -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ROW 4: Behavioral Skills (Bottom) -->
+            <section class="card-box behavioral-section">
+                <div class="section-header">
+                    <h3>Behavioral & Operational Contributions</h3>
+                </div>
+                <div class="behavioral-grid" id="behavioral-grid">
+                    <!-- Injected via app.js -->
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

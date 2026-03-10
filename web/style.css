@@ -1,0 +1,437 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #FAFBFF;
+    /* Very light cool background */
+    color: #1E293B;
+    overflow-x: hidden;
+}
+
+/* Layout Grid */
+.app-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* MAIN CONTENT WRAPPER */
+.main-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 48px;
+    overflow-y: auto;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+
+/* Top Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 8px;
+}
+
+.header-titles h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.header-titles p {
+    font-size: 14px;
+    color: #94A3B8;
+}
+
+.header-stats {
+    display: flex;
+    gap: 16px;
+}
+
+.stat-pill {
+    background: #FFFFFF;
+    border: 1px solid #F1F5F9;
+    border-radius: 12px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.stat-pill .icon {
+    font-size: 20px;
+}
+
+.stat-pill div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-pill strong {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.stat-pill span {
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Section Outer Titles */
+.section-title-outer {
+    margin-top: 16px;
+    margin-bottom: -16px;
+}
+
+.section-title-outer h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.section-title-outer p {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-top: 4px;
+}
+
+/* Reusable Cards */
+.card-box {
+    background: #FFFFFF;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border: 1px solid #F8FAFC;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.search-bar.mini {
+    background: #F8FAFC;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #F1F5F9;
+    width: 250px;
+}
+
+.search-bar.mini input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 13px;
+    width: 100%;
+    color: #0F172A;
+}
+
+.dropdown {
+    padding: 8px 16px;
+    border-radius: 99px;
+    border: 1px solid #F1F5F9;
+    background: #F8FAFC;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+    cursor: pointer;
+}
+
+.icon-btn.small {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 50%;
+    background: #F8FAFC;
+    border: 1px solid #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Grid Layouts */
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+/* Chart Area Overlay Labels */
+.custom-chart-labels {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 10;
+    padding: 0 8%;
+}
+
+.c-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.c-label strong {
+    font-size: 13px;
+    color: #0F172A;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.c-label span {
+    font-size: 11px;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+/* Scrollable Tables Section */
+.table-scroll-container {
+    overflow-x: auto;
+    padding-right: 4px;
+}
+
+.limit-height-full {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.limit-height-1 {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Reused Custom Scrollbar */
+.table-scroll-container::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.table-scroll-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 6px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+.data-table th {
+    text-align: left;
+    font-size: 11px;
+    color: #94A3B8;
+    font-weight: 700;
+    padding: 12px 16px;
+    border-bottom: 2px solid #F1F5F9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.data-table td {
+    font-size: 13px;
+    color: #0F172A;
+    font-weight: 600;
+    padding: 16px 16px;
+    border-bottom: 1px solid #F8FAFC;
+}
+
+.data-table tbody tr:hover {
+    background-color: #F8FAFC;
+}
+
+.candidate-avatar-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.candidate-avatar-cell img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.status-badge {
+    background: #F1F5F9;
+    color: #64748B;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.status-badge.blue {
+    background: #E0F2FE;
+    color: #0EA5E9;
+}
+
+.status-badge.green {
+    background: #D1FAE5;
+    color: #10B981;
+}
+
+.status-badge.red {
+    background: #FEE2E2;
+    color: #EF4444;
+}
+
+.status-badge.orange {
+    background: #FEF3C7;
+    color: #F59E0B;
+}
+
+/* Twin Panels (Leaves) */
+.card-pink {
+    background: #FFFAFB;
+    border: 1px solid #FFE4E6;
+    box-shadow: none;
+}
+
+.card-purple {
+    background: #FCFAFF;
+    border: 1px solid #F3E8FF;
+    box-shadow: none;
+}
+
+.mini-stat {
+    font-size: 13px;
+    color: #EF4444;
+    font-weight: 600;
+}
+
+/* Behavioral Grid */
+.behavioral-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.b-card {
+    background: #F8FAFC;
+    border: 1px solid #F1F5F9;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.b-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.b-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.b-card li {
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 12px;
+}
+
+.b-card li:before {
+    content: "•";
+    color: #0EA5E9;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+/* L&D Step Chart (Pure CSS) */
+.step-chart-container {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    margin-top: 16px;
+    height: 100%;
+    min-height: 180px;
+}
+.step-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+.step-lbl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.step-lbl strong { font-size: 13px; color: #0F172A; }
+.step-lbl span { font-size: 11px; color: #94A3B8; margin-top: 2px; }
+.step-bar {
+    width: 100%;
+    background-color: #5CE1E6;
+}
+
+/* Clean Table Styles for L&D */
+.clean-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.clean-table th {
+    background: transparent !important;
+    color: #94A3B8 !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 12px 0 16px 0 !important;
+    border-bottom: 2px solid #F1F5F9 !important;
+    text-transform: uppercase;
+}
+.clean-table td {
+    padding: 16px 0 !important;
+    border-bottom: 1px solid #F1F5F9 !important;
+    font-size: 14px;
+    color: #0F172A;
+    font-weight: 500;
+}
+.clean-table tr:last-child td {
+    border-bottom: none !important;
+}
