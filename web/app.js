@@ -18,28 +18,48 @@ function renderLDTrendChart() {
     gradient.addColorStop(1, 'rgba(16, 185, 129, 0)');
 
     new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
             labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
-            datasets: [{
-                label: 'Avg. Working Hours',
-                data: [4.2, 3.1, 4.3, 2.5, 4.8, 6.2, 5.1],
-                borderColor: '#10B981',
-                backgroundColor: gradient,
-                borderWidth: 2,
-                fill: true,
-                tension: 0.4,
-                pointRadius: 0,
-                pointHoverRadius: 5
-            }]
+            datasets: [
+                {
+                    label: 'Internal Learning',
+                    data: [8, 12, 10, 6, 9, 5, 3.3], // Example ~53.3 hours
+                    backgroundColor: '#10B981', // green
+                    borderRadius: 4
+                },
+                {
+                    label: 'External Learning',
+                    data: [3, 5, 2, 4, 6, 5, 2], // Example ~27 hours
+                    backgroundColor: '#3B82F6', // blue
+                    borderRadius: 4
+                }
+            ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        font: { family: "'Plus Jakarta Sans', sans-serif", size: 12 },
+                        color: '#64748B'
+                    }
+                }
+            },
             scales: {
-                x: { grid: { display: false }, ticks: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 }, color: '#94A3B8' } },
-                y: { border: { dash: [4, 4] }, grid: { color: '#F1F5F9', drawBorder: false }, ticks: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 }, color: '#94A3B8' } }
+                x: {
+                    grid: { display: false },
+                    ticks: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 }, color: '#94A3B8' }
+                },
+                y: {
+                    border: { dash: [4, 4] },
+                    grid: { color: '#F1F5F9', drawBorder: false },
+                    ticks: { font: { family: "'Plus Jakarta Sans', sans-serif", size: 11 }, color: '#94A3B8' }
+                }
             }
         }
     });
@@ -69,11 +89,11 @@ function renderCandidateTable() {
     // Top priority detailed list
     const candidates = [
         { name: "Alan Pinto", role: "VMO Project Support", skills: "Project Mgt, Support", client: "Lupin", loc: "Airoli", doj: "14-Jul-25", color: "10B981" },
-        { name: "Shivappa Tekale", role: "SAP SD Invoicing Architect", skills: "SAP SD", client: "Hitachi", loc: "Bangalore", doj: "13-Aug-25", color: "F59E0B" },
-        { name: "Manoj R.", role: "SAP CRM / C4C", skills: "SAP CRM, C4C", client: "Hitachi", loc: "Bangalore", doj: "14-Aug-25", color: "3B82F6" },
-        { name: "Neelufar A", role: "HR Assistant", skills: "HR, Admin", client: "Amazon", loc: "Bangalore", doj: "22-Dec-25", color: "A855F7" },
-        { name: "Bukya Santhosh", role: "Infra (Azure) Engineer", skills: "Azure Cloud, Infra", client: "Hitachi", loc: "Hyderabad", doj: "05-Mar-26", color: "EC4899" },
-        { name: "Sahare Ratnabodhi", role: "E2E Quality Assurance", skills: "QA, E2E Testing", client: "Amazon", loc: "Bangalore", doj: "10-Mar-26", color: "0EA5E9" }
+        { name: "Shivappa Tekale", role: "SAP SD Invoicing Architect", skills: "SAP SD", client: "Hitachi", loc: "Bangalore", doj: "13-Aug-25", color: "3B82F6" },
+        { name: "Manoj R.", role: "SAP CRM / C4C", skills: "SAP CRM, C4C", client: "Hitachi", loc: "Bangalore", doj: "14-Aug-25", color: "10B981" },
+        { name: "Neelufar A", role: "HR Assistant", skills: "HR, Admin", client: "Amazon", loc: "Bangalore", doj: "22-Dec-25", color: "3B82F6" },
+        { name: "Bukya Santhosh", role: "Infra (Azure) Engineer", skills: "Azure Cloud, Infra", client: "Hitachi", loc: "Hyderabad", doj: "05-Mar-26", color: "10B981" },
+        { name: "Sahare Ratnabodhi", role: "E2E Quality Assurance", skills: "QA, E2E Testing", client: "Amazon", loc: "Bangalore", doj: "10-Mar-26", color: "3B82F6" }
     ];
 
     const tbody = document.getElementById('candidate-table');
@@ -179,7 +199,7 @@ function renderLeavesDonuts() {
                 labels: ['Taken (18)', 'Remaining (7)'],
                 datasets: [{
                     data: [18, 7],
-                    backgroundColor: ['#EC4899', '#A855F7'],
+                    backgroundColor: ['#3B82F6', '#E2E8F0'],
                     borderWidth: 0,
                     cutout: '65%'
                 }]
@@ -199,7 +219,7 @@ function renderLeavesDonuts() {
                 labels: ['Taken (8)', 'Remaining (27)'],
                 datasets: [{
                     data: [8, 27],
-                    backgroundColor: ['#A855F7', '#3B82F6'],
+                    backgroundColor: ['#3B82F6', '#E2E8F0'],
                     borderWidth: 0,
                     cutout: '65%'
                 }]

@@ -8,9 +8,14 @@
 
 body {
     background-color: #FAFBFF;
-    /* Very light cool background */
     color: #1E293B;
     overflow-x: hidden;
+    width: 100vw;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100vw;
 }
 
 /* Layout Grid */
@@ -34,28 +39,54 @@ body {
     max-width: 1600px;
 }
 
-/* Top Header */
 .top-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 8px;
+    margin-bottom: 24px;
+    gap: 24px;
+    width: 100%;
 }
 
-.header-titles h1 {
+.header-titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.brand-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-title img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.brand-title h1 {
     font-size: 24px;
     font-weight: 800;
     color: #0F172A;
 }
 
-.header-titles p {
-    font-size: 14px;
-    color: #94A3B8;
+.brand-subtitle {
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+    font-size: 15px;
+    color: #64748B;
 }
 
 .header-stats {
-    display: flex;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
 }
 
 .kpi-card {
@@ -146,6 +177,9 @@ body {
     padding: 24px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
     border: 1px solid #F8FAFC;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .section-header {
@@ -249,6 +283,7 @@ body {
 .table-scroll-container {
     overflow-x: auto;
     padding-right: 4px;
+    width: 100%;
 }
 
 .limit-height-full {
@@ -346,22 +381,9 @@ body {
     color: #F59E0B;
 }
 
-/* Twin Panels (Leaves) */
-.card-pink {
-    background: #FFFAFB;
-    border: 1px solid #FFE4E6;
-    box-shadow: none;
-}
-
-.card-purple {
-    background: #FCFAFF;
-    border: 1px solid #F3E8FF;
-    box-shadow: none;
-}
-
 .mini-stat {
     font-size: 13px;
-    color: #EF4444;
+    color: #64748B;
     font-weight: 600;
 }
 
@@ -405,7 +427,7 @@ body {
 
 .b-card li:before {
     content: "•";
-    color: #0EA5E9;
+    color: #3B82F6;
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -480,4 +502,210 @@ body {
 
 .clean-table tr:last-child td {
     border-bottom: none !important;
+}
+
+/* --- Desktop Layout Grid Classes --- */
+.ld-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 32px;
+    width: 100%;
+}
+
+.ld-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.ld-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.learning-total-badge {
+    font-size: 16px;
+    font-weight: 700;
+    color: #10B981;
+    margin: 0;
+    background: #ECFDF5;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    width: 100%;
+}
+
+.line-chart-wrapper {
+    height: 220px;
+    position: relative;
+    flex-grow: 1;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.ld-trajectory-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.ld-tables-col {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.flex-section {
+    flex: 1;
+    padding: 24px;
+}
+
+.ld-table-header {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ld-table-header h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0F172A;
+    margin: 0;
+}
+
+.ld-hrs-badge {
+    font-size: 13px;
+    font-weight: 600;
+    color: #10B981;
+    background: #ECFDF5;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.external-badge {
+    color: #3B82F6;
+    background: #EFF6FF;
+}
+
+.limit-height-visible {
+    overflow-y: visible;
+}
+
+.leaves-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.donut-wrapper {
+    height: 250px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* --- Mobile Responsiveness Rules --- */
+
+/* Tablet <= 1024px */
+@media (max-width: 1024px) {
+    .main-wrapper {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kpi-card {
+        min-width: unset;
+    }
+
+    .ld-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-2-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile <= 768px */
+@media (max-width: 768px) {
+    .main-wrapper {
+        padding: 16px;
+        gap: 20px;
+    }
+
+    .top-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .header-titles {
+        align-items: center;
+        text-align: center;
+    }
+
+    .brand-title h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .header-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .ld-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .ld-header h2 {
+        font-size: 18px;
+    }
+
+    .learning-total-badge {
+        font-size: 14px;
+    }
+
+    .section-title-outer h2 {
+        font-size: 18px;
+    }
+
+    .card-box {
+        padding: 16px;
+    }
+
+    .behavioral-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ld-table-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
 }

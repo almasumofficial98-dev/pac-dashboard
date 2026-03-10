@@ -21,67 +21,55 @@
 
             <!-- Header & Top Stats -->
             <header class="top-header">
-                <div class="header-titles" style="display: flex; flex-direction: column; justify-content: center;">
-                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                <div class="header-titles">
+                    <div class="brand-title">
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM5ShE_QoskbM5fk8zz5a-SqmczvYRpp7oNw&s"
-                            alt="Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 4px;">
-                        <h1>AL MASUM PAC 2025-26</h1>
+                            alt="Logo">
+                        <h1>AL MASUM GAZI - PAC 2025-2026</h1>
                     </div>
-                    <p style="text-align: center; width: 100%; font-weight: 600; font-size: 15px;">AL MASUM GAZI</p>
+
                 </div>
 
-                <div class="header-stats" style="gap: 20px;">
+                <div class="header-stats">
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-title">Profiles Submitted</span>
-                            <div class="kpi-icon" style="background: #FFFBEB; color: #F59E0B;">
+                            <div class="kpi-icon" style="background: #EFF6FF; color: #3B82F6;">
                                 <span>📂</span>
                             </div>
                         </div>
                         <div class="kpi-value">450+</div>
-                        <div class="kpi-trend">
-                            <span class="kpi-trend-up">↑ +12.00%</span>
-                            <span style="display: block;">this week</span>
-                        </div>
+
                     </div>
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-title">Interviews Scheduled</span>
-                            <div class="kpi-icon" style="background: #ECFDF5; color: #10B981;">
+                            <div class="kpi-icon" style="background: #EFF6FF; color: #3B82F6;">
                                 <span>📅</span>
                             </div>
                         </div>
                         <div class="kpi-value">50+</div>
-                        <div class="kpi-trend">
-                            <span class="kpi-trend-down">↓ -3.00%</span>
-                            <span style="display: block;">this week</span>
-                        </div>
+
                     </div>
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-title">Total Closures</span>
-                            <div class="kpi-icon" style="background: #E0F2FE; color: #0EA5E9;">
+                            <div class="kpi-icon" style="background: #EFF6FF; color: #3B82F6;">
                                 <span>🤝</span>
                             </div>
                         </div>
                         <div class="kpi-value">6</div>
-                        <div class="kpi-trend">
-                            <span class="kpi-trend-up">↑ +2.00%</span>
-                            <span style="display: block;">this week</span>
-                        </div>
+
                     </div>
                     <div class="kpi-card">
                         <div class="kpi-header">
                             <span class="kpi-title">Avg Closure Time</span>
-                            <div class="kpi-icon" style="background: #FAF5FF; color: #A855F7;">
+                            <div class="kpi-icon" style="background: #EFF6FF; color: #3B82F6;">
                                 <span>⏱</span>
                             </div>
                         </div>
                         <div class="kpi-value">15 Days</div>
-                        <div class="kpi-trend">
-                            <span class="kpi-trend-up">↑ +5.00%</span>
-                            <span style="display: block;">this week</span>
-                        </div>
+
                     </div>
                 </div>
             </header>
@@ -89,9 +77,9 @@
             <!-- PRIORITY 1: Candidate Closures (Full Width) -->
             <section class="card-box closures-section">
                 <div class="section-header">
-                    <h3>Priority: Candidate Closures</h3>
+                    <h3>Candidate Closures - 6</h3>
                 </div>
-                <div class="table-scroll-container limit-height-full">
+                <div class="table-scroll-container limit-height-visible">
                     <table class="data-table">
                         <thead>
                             <tr>
@@ -112,43 +100,36 @@
             </section>
 
             <!-- ROW 2: Learning & Development -->
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px;">
+            <div class="ld-header">
                 <div>
-                    <h2 style="font-size: 20px; font-weight: 700; color: #0F172A; margin: 0;">Learning & Development
-                    </h2>
+                    <h2>Learning & Development</h2>
                 </div>
                 <div>
-                    <h2
-                        style="font-size: 16px; font-weight: 700; color: #10B981; margin: 0; background: #ECFDF5; padding: 8px 16px; border-radius: 20px;">
-                        Total Learning: 83.3 Hours</h2>
+                    <h2 class="learning-total-badge">Total Learning: 83.3 Hours</h2>
                 </div>
             </div>
-            <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px;">
+            <div class="ld-grid">
 
                 <!-- L&D Trajectory -->
-                <section class="card-box" style="display: flex; flex-direction: column;">
-                    <div class="section-header" style="align-items: center;">
-                        <h3 style="font-size: 16px;">Learning & Development Trajectory</h3>
+                <section class="card-box ld-trajectory-card">
+                    <div class="section-header">
+                        <h3>Learning & Development Trajectory</h3>
                     </div>
 
-                    <div class="chart-wrapper" style="height: 220px; position:relative; flex-grow:1; margin-top: 24px;">
+                    <div class="chart-wrapper line-chart-wrapper">
                         <canvas id="ld-line-chart"></canvas>
                     </div>
                 </section>
 
                 <!-- Internal & External L&D Right Side -->
-                <div style="display: flex; flex-direction: column; gap: 32px;">
+                <div class="ld-tables-col">
                     <!-- Internal L&D -->
-                    <section class="card-box" style="flex: 1; padding: 24px;">
-                        <div
-                            style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
-                            <h3 style="font-size: 16px; font-weight: 600; color: #0F172A; margin: 0;">Internal Required
-                                Courses</h3>
-                            <span
-                                style="font-size: 13px; font-weight: 600; color: #10B981; background: #ECFDF5; padding: 4px 10px; border-radius: 12px;">53.3
-                                Hrs Completed</span>
+                    <section class="card-box flex-section">
+                        <div class="ld-table-header">
+                            <h3>Internal Required Courses</h3>
+                            <span class="ld-hrs-badge">53.3 Hrs Completed</span>
                         </div>
-                        <div class="table-scroll-container" style="overflow-y: visible;">
+                        <div class="table-scroll-container limit-height-visible">
                             <table class="data-table clean-table">
                                 <thead>
                                     <tr>
@@ -164,16 +145,12 @@
                     </section>
 
                     <!-- External L&D -->
-                    <section class="card-box" style="flex: 1; padding: 24px;">
-                        <div
-                            style="margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between;">
-                            <h3 style="font-size: 16px; font-weight: 600; color: #0F172A; margin: 0;">External
-                                Certifications & Self Learning</h3>
-                            <span
-                                style="font-size: 13px; font-weight: 600; color: #10B981; background: #ECFDF5; padding: 4px 10px; border-radius: 12px;">27.0
-                                Hrs Completed</span>
+                    <section class="card-box flex-section">
+                        <div class="ld-table-header">
+                            <h3>External Certifications & Self Learning</h3>
+                            <span class="ld-hrs-badge external-badge">27.0 Hrs Completed</span>
                         </div>
-                        <div class="table-scroll-container" style="overflow-y: visible;">
+                        <div class="table-scroll-container limit-height-visible">
                             <table class="data-table clean-table">
                                 <thead>
                                     <tr>
@@ -199,17 +176,16 @@
 
             <div class="grid-2-col">
                 <!-- 2025 Leaves -->
-                <section class="card-box card-pink">
+                <section class="card-box">
                     <div class="section-header">
                         <h3>2025 Overal Tracking</h3>
                         <div class="mini-stat"><strong>25</strong> Provided &bull; <strong>18</strong> Taken</div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 32px; align-items: center;">
-                        <div class="chart-wrapper"
-                            style="height: 250px; width: 100%; position:relative; display: flex; justify-content: center;">
+                    <div class="leaves-card-body">
+                        <div class="chart-wrapper donut-wrapper">
                             <canvas id="leaves-donut-2025"></canvas>
                         </div>
-                        <div class="table-scroll-container" style="width: 100%;">
+                        <div class="table-scroll-container full-width">
                             <table class="data-table">
                                 <thead>
                                     <tr>
@@ -228,19 +204,16 @@
                 </section>
 
                 <!-- 2026 Leaves -->
-                <section class="card-box card-purple">
+                <section class="card-box">
                     <div class="section-header">
                         <h3>2026 Current Tracking</h3>
-                        <div class="mini-stat" style="color:#A855F7;"><strong>35</strong> Provided &bull;
-                            <strong>8</strong> Taken
-                        </div>
+                        <div class="mini-stat"><strong>35</strong> Provided &bull; <strong>8</strong> Taken</div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 32px; align-items: center;">
-                        <div class="chart-wrapper"
-                            style="height: 250px; width: 100%; position:relative; display: flex; justify-content: center;">
+                    <div class="leaves-card-body">
+                        <div class="chart-wrapper donut-wrapper">
                             <canvas id="leaves-donut-2026"></canvas>
                         </div>
-                        <div class="table-scroll-container" style="width: 100%;">
+                        <div class="table-scroll-container full-width">
                             <table class="data-table">
                                 <thead>
                                     <tr>
