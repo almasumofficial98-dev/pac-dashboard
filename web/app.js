@@ -275,7 +275,10 @@ function renderBehavioralGrid() {
     const container = document.getElementById('behavioral-grid');
     container.innerHTML = behaviors.map(b => `
         <div class="b-card">
-            <h4><span style="font-size:18px;">${b.icon}</span> ${b.title}</h4>
+            <div class="b-card-header">
+                <div class="b-card-icon"><span>${b.icon}</span></div>
+                <h4>${b.title}</h4>
+            </div>
             <ul>
                 ${b.items.map(i => `<li>${i}</li>`).join('')}
             </ul>
