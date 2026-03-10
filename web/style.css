@@ -58,37 +58,67 @@ body {
     gap: 16px;
 }
 
-.stat-pill {
+.kpi-card {
     background: #FFFFFF;
-    border: 1px solid #F1F5F9;
     border-radius: 12px;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
-}
-
-.stat-pill .icon {
-    font-size: 20px;
-}
-
-.stat-pill div {
+    padding: 20px 24px;
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.025);
+    min-width: 220px;
 }
 
-.stat-pill strong {
-    font-size: 16px;
+.kpi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.kpi-title {
+    font-size: 15px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.kpi-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.kpi-value {
+    font-size: 28px;
     font-weight: 800;
     color: #0F172A;
 }
 
-.stat-pill span {
-    font-size: 11px;
+.kpi-trend {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
     color: #64748B;
+}
+
+.kpi-trend-up {
+    color: #10B981;
+    background: #ECFDF5;
+    padding: 2px 6px;
+    border-radius: 4px;
     font-weight: 600;
-    text-transform: uppercase;
+}
+
+.kpi-trend-down {
+    color: #EF4444;
+    background: #FEF2F2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
 /* Section Outer Titles */
@@ -380,6 +410,7 @@ body {
     left: 0;
     font-weight: bold;
 }
+
 /* L&D Step Chart (Pure CSS) */
 .step-chart-container {
     display: flex;
@@ -389,6 +420,7 @@ body {
     height: 100%;
     min-height: 180px;
 }
+
 .step-col {
     flex: 1;
     display: flex;
@@ -397,6 +429,7 @@ body {
     align-items: center;
     height: 100%;
 }
+
 .step-lbl {
     display: flex;
     flex-direction: column;
@@ -404,8 +437,18 @@ body {
     margin-bottom: 8px;
     text-align: center;
 }
-.step-lbl strong { font-size: 13px; color: #0F172A; }
-.step-lbl span { font-size: 11px; color: #94A3B8; margin-top: 2px; }
+
+.step-lbl strong {
+    font-size: 13px;
+    color: #0F172A;
+}
+
+.step-lbl span {
+    font-size: 11px;
+    color: #94A3B8;
+    margin-top: 2px;
+}
+
 .step-bar {
     width: 100%;
     background-color: #5CE1E6;
@@ -416,6 +459,7 @@ body {
     width: 100%;
     border-collapse: collapse;
 }
+
 .clean-table th {
     background: transparent !important;
     color: #94A3B8 !important;
@@ -425,6 +469,7 @@ body {
     border-bottom: 2px solid #F1F5F9 !important;
     text-transform: uppercase;
 }
+
 .clean-table td {
     padding: 16px 0 !important;
     border-bottom: 1px solid #F1F5F9 !important;
@@ -432,6 +477,7 @@ body {
     color: #0F172A;
     font-weight: 500;
 }
+
 .clean-table tr:last-child td {
     border-bottom: none !important;
 }
